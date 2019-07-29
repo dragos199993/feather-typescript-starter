@@ -1,0 +1,36 @@
+{
+  "name": "FeatherJS",
+  "version": "1.0.0",
+  "main": "src",
+  "license": "MIT",
+  "directories": {
+    "lib": "src",
+    "test": "test/"
+  },
+  "scripts": {
+    "test": "npm run eslint && NODE_ENV= npm run mocha",
+    "eslint": "eslint src/. test/. --config .eslintrc.json",
+    "dev": "cd src && nodemon index.ts",
+    "compile": "rm -rf dist && tsc -outDir dist",
+    "start": "npm run compile && node dist/",
+    "mocha": "mocha test/ --recursive --exit"
+  },
+  "dependencies": {
+    "@feathersjs/feathers": "^3.3.1",
+    "@feathersjs/configuration": "^2.0.4",
+    "@feathersjs/express": "^1.2.7",
+    "@feathersjs/socketio": "^3.2.7",
+    "helmet": "^3.15.0",
+    "cors": "^2.8.5",
+    "compression": "^1.7.3",
+    "serve-favicon": "^2.5.0",
+    "winston": "^3.2.1"
+  },
+  "devDependencies": {
+    "@types/node": "^10.12.9",
+    "eslint": "^5.9.0",
+    "nodemon": "^1.18.6",
+    "ts-node": "^7.0.1",
+    "typescript": "^3.1.6"
+  }
+}
